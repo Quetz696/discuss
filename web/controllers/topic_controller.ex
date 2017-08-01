@@ -26,13 +26,17 @@ defmodule Discuss.TopicController do
             {:error, changeset} ->
                  render conn, "new.html", changeset: changeset
         end
-
-
     end
 
     def index(conn, _params) do
         topics = Repo.all(Topic)
         render conn, "index.html", topics: topics
+    end
+
+    def show(conn, %{"id" => topic_id}) do
+      topic = Repo.get!(Topic, topic_id)
+      IO.inspect(topic)
+      render conn, "show.html", topic: topic
     end
 
     def edit(conn, %{"id" => topic_id}) do
