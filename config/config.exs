@@ -12,7 +12,7 @@ config :discuss,
 # Configures the endpoint
 config :discuss, Discuss.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "O8A43I9gwAxdI2ayaiJpm0bfg/XG/8x7jDa4wGpx9UOq+4qmiFbCM0UE9FEHUXwF",
+  secret_key_base: "your_secret_key_base",
   render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Discuss.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -24,12 +24,12 @@ config :ueberauth, Ueberauth,
   ]
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-  client_id: "90832779de73d9653c1b",
-  client_secret: "421b15f2efcbf23d8e6c1e19d8269ea76a2f266d"
+  client_id: "your_client_id",
+  client_secret: "your_client_secret"
 
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
-  client_id: "976619160462-2cgdfml1kkka1ensf3ibtummuab5gcc4.apps.googleusercontent.com",
-  client_secret: "ryj4DtIa5n0tA18JQpHeBslz"
+  client_id: "your_client_id",
+  client_secret: "your_client_secret"
 
 # Configures Elixir's Logger
 config :logger, :console,
